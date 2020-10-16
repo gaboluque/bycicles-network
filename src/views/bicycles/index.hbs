@@ -1,0 +1,29 @@
+<block class="content">
+  <h1>Bicycles</h1>
+  <a href="/bicycles/new">New</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Color</th>
+        <th scope="col">Model</th>
+        <th scope="col">Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each bicycles as | bicycle |}}
+      <tr scope="row">
+        <td>{{ id }}</td>
+        <td>{{ color }}</td>
+        <td>{{ model }}</td>
+        <td>{{ location }}</td>
+        <td>
+          <form action="/bicycles/{{id}}/delete" method="post">
+            <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+          </form>
+        </td>
+      </tr>
+      {{/ each}}
+    </tbody>
+  </table>
+</block>

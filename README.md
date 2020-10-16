@@ -1,6 +1,6 @@
 # README #
 
-Proyecto Modulo 1 - Red de bicicletas
+Proyecto Modulo 1 - Red de bicycles
 
 ### Instrucciones ###
 
@@ -20,6 +20,6 @@ En tu proyecto deberá verse:
     5. un mapa centrado en una ciudad.
     6. marcadores indicando una  ubicación.
     7. un script npm en el archivo package.json, debajo del “start”, que se llama “devstart” y que levanta el servidor utilizando npdemon.
-    8. un par de bicicletas en la colección que conoce la bicicleta en memoria, con las ubicaciones cercanas al centro del mapa agregado.
-    9. una colección del modelo de bicicleta.
+    8. un par de bicycles en la colección que conoce la bicycle en memoria, con las ubicaciones cercanas al centro del mapa agregado.
+    9. una colección del modelo de bicycle.
     10. los endpoints de la API funcionando con Postman.

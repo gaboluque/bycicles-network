@@ -20,3 +20,18 @@ exports.deleteBicycle = function ({ params }, res) {
   Bicycle.removeById(id);
   res.redirect('/bicycles');
 }
+
+exports.editBicycle = function ({ params }, res) {
+  const bicycle = Bicycle.findById(params.id);
+  console.log(bicycle);
+  res.render('bicycles/edit', { bicycle })
+}
+
+exports.updateBicycle = function ({ params, body }, res) {
+  const { id } = params;
+  const bicycle = Bicycle.findById(params.id);
+  const { model, color, lat, lng } = body;
+  const newBicycle = new Bicycle(undefined, color, model, [lat, lng]);
+  Bicycle.updateById(id, newBicycle);
+  res.redirect('/bicycles');
+}

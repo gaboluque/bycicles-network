@@ -14,11 +14,36 @@ class Bicycle {
     Bicycle.allBicycles.push(bicycle);
   }
 
+  static findById(bicycleId) {
+    const found = [...Bicycle.allBicycles].find(
+      ({ id }) => id == `${bicycleId}`
+    );
+    if(!found) {
+      throw new Error('Bicycle not found!')
+    }
+    return found;
+  }
+
+  static findIndexById(bicycleId) {
+    const foundIndex = [...Bicycle.allBicycles].findIndex(
+      ({ id }) => id == `${bicycleId}`
+    );
+    if(foundIndex <= 0) {
+      throw new Error('Bicycle not found!')
+    }
+    return foundIndex;
+  }
+
   static removeById(bicycleId) {
-    const foundIndex = [...Bicycle.allBicycles].findIndex(({id}) =>  id == `${bicycleId}`);
-    console.log('index', foundIndex);
+    const foundIndex = this.findIndexById(bicycleId);
     Bicycle.allBicycles.splice(foundIndex, 1);
-    console.log(Bicycle.allBicycles);
+  }
+
+  static updateById(bicycleId, DTO) {
+    let updateBicycle = this.findById(bicycleId);
+    updateBicycle.model = DTO.model;
+    updateBicycle.color = DTO.color;
+    updateBicycle.location = DTO.location;
   }
 }
 

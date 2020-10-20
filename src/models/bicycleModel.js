@@ -50,10 +50,10 @@ class Bicycle {
 
 Bicycle.allBicycles = [];
 
-const bicycle1 = new Bicycle(1, 'Red', 'Mountain', [4.712825, -74.048137]);
-const bicycle2 = new Bicycle(2, 'Blue', 'Urban', [4.710980, -74.072070]);
-
-Bicycle.add(bicycle1);
-Bicycle.add(bicycle2);
+// const bicycle1 = new Bicycle(1, 'Red', 'Mountain', [4.712825, -74.048137]);
+// const bicycle2 = new Bicycle(2, 'Blue', 'Urban', [4.710980, -74.072070]);
+//
+// Bicycle.add(bicycle1);
+// Bicycle.add(bicycle2);
 
 module.exports = Bicycle;

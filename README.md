@@ -2,24 +2,21 @@
 
 Proyecto Modulo 1 - Red de bicycles
 
-### Instrucciones ###
+### Semana 2 ###
 
-Te invitamos a demostrar tus aprendizajes adquiridos hasta ahora en el curso. Se trata del producto de llevar a cabo las guías prácticas de los módulos.
+    *
+
+### Semana 1 ###
 
     * Crear un proyecto de Node JS.
     * Resguardar tu proyecto con GIT sobre Bitbucket.
     * Configurar librerías con NPM.
     * Aplicar los conceptos básicos de la programación web y Express.
 
-En tu proyecto deberá verse:
+En el proyecto, hasta éste punto, podrá verse:
 
-    1. un archivo README (sólo texto) en el repositorio de Bitbucket.
-    2. el mensaje de bienvenida a Express.
-    3. el proyecto vinculado con el repositorio de Bitbucket creado previamente.
-    4. el servidor que se ve correctamente, comparándolo con la versión original.
-    5. un mapa centrado en una ciudad.
-    6. marcadores indicando una  ubicación.
-    7. un script npm en el archivo package.json, debajo del “start”, que se llama “devstart” y que levanta el servidor utilizando npdemon.
-    8. un par de bicycles en la colección que conoce la bicycle en memoria, con las ubicaciones cercanas al centro del mapa agregado.
-    9. una colección del modelo de bicycle.
-    10. los endpoints de la API funcionando con Postman.
+    1. Un mapa centrado en una ciudad.
+    2. Marcadores indicando una  ubicación.
+    3. Un par de bicicletas en memoria, con las ubicaciones cercanas al centro del mapa agregado.
+    4. Una colección del modelo de bicycle.
+    5. Los endpoints de la API funcionando con Postman.

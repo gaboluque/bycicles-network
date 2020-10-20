@@ -1,4 +1,4 @@
-var mymap = L.map('mapid').setView([4.710989, -74.072090], 13);
+var map = L.map('mapid').setView([4.710989, -74.072090], 13);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
   maxZoom: 18,
@@ -8,4 +8,14 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   id: 'mapbox/streets-v11',
   tileSize: 512,
   zoomOffset: -1
-}).addTo(mymap);
+}).addTo(map);
+
+$.ajax({
+  dataType: 'json',
+  url: '/api/bicycles',
+  success: function ({ bicycles }) {
+    bicycles.forEach((bicycle) => {
+      L.marker(bicycle.location, { title: bicycle.id }).addTo(map);
+    })
+  }
+});

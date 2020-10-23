@@ -1,3 +1,47 @@
+const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
+
+const bicycleSchema = new Schema({
+  code: Number,
+  color: String,
+  model: String,
+  location: {
+    type: [Number],
+    index: { type: '2dsphere', sparse: true },
+  },
+});
+
+bicycleSchema.statics.createInstance = function (code, color, model, location) {
+  return new this({ code, color, model, location });
+};
+
+bicycleSchema.methods.toString = function () {
+  return `code: ${this.code} | color: ${this.color}`;
+};
+
+bicycleSchema.statics.allBicycles = function (cb) {
+  return this.find({}, cb);
+};
+
+bicycleSchema.statics.add = function (bicycle, cb) {
+  this.create(bicycle, cb);
+};
+
+bicycleSchema.statics.findByCode = function (code, cb) {
+  return this.findOne({ code }, cb);
+};
+
+bicycleSchema.statics.deleteByCode = function (code, cb) {
+  return this.deleteOne({ code }, cb);
+};
+
+module.exports = mongoose.model('Bicycle', bicycleSchema);
+
+/* 
+
+// No-database model
+
 class Bicycle {
   constructor(id, color, model, location) {
     this.id = id;
@@ -18,7 +62,7 @@ class Bicycle {
     const found = [...Bicycle.allBicycles].find(
       ({ id }) => id == `${bicycleId}`
     );
-    if(!found) {
+    if (!found) {
       throw new Error('Bicycle not found!')
     }
     return found;
@@ -28,7 +72,7 @@ class Bicycle {
     const foundIndex = [...Bicycle.allBicycles].findIndex(
       ({ id }) => id == `${bicycleId}`
     );
-    if(foundIndex < 0) {
+    if (foundIndex < 0) {
       throw new Error('Bicycle not found!')
     }
     return foundIndex;
@@ -56,4 +100,4 @@ Bicycle.allBicycles = [];
 // Bicycle.add(bicycle1);
 // Bicycle.add(bicycle2);
 
-module.exports = Bicycle;
+module.exports = Bicycle; */

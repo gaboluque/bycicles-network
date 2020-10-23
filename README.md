@@ -4,7 +4,18 @@ Proyecto Modulo 1 - Red de bicycles
 
 ### Semana 2 ###
 
-    *
+    * Configurar una base MongoDB.
+    * Realizar las típicas tareas CRUD sobre MongoDB.
+    * Conectar tu modelo con MongoDB utilizando Mongoose.
+
+En el proyecto, hasta éste punto, podrá verse:
+
+    1. Pruebas unitarias del modelo y api de bibicletas
+    2. Todas las pruebas pasando
+    3. Modelo de Usuarios y Reservas
+    4. Endpoints para crear usuarios y reservas
+    5. Conección a Mongodb utilizando Mongoose
+
 
 ### Semana 1 ###
 

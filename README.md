@@ -1,6 +1,6 @@
 # README #
 
-Proyecto Modulo 1 - Red de bicycles
+Red de Bicicletas
 
 ### Semana 2 ###
 

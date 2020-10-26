@@ -1,0 +1,19 @@
+<div class="login-form row justify-content-md-center">
+    <form action="/login" method="post" class="col col-md-4 mt-5">
+        <h2 class="text-center">Log in</h2>   
+        <div class="text-danger text-center">{{info.message}}</div>
+        <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Username" required="required">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" class="form-control" placeholder="Password" required="required">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+        </div>
+        <div class="clearfix">
+            <a href="/forgot-password" class="float-left">Forgot Password?</a>
+            <a href="#" class="float-right">Create an account</a>
+        </div>       
+    </form>
+</div>

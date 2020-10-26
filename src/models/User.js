@@ -87,7 +87,31 @@ userSchema.methods.sendWelcomeEmail = function () {
       from: 'no-reply-biccycle-network.com',
       to: destinationEmail,
       subject: 'Verification code',
-      text: `Hola!, para confirmar tu correo, haz click en el siguiente link: http://localhost:3000/token/confirm-token/${token.token}/ `,
+      text: `Hola!, para confirmar tu correo, 
+      haz click en el siguiente link: http://localhost:3000/token/confirm-token/${token.token}/ `,
+    };
+
+    mailer.sendMail(mailOptions, (err2) => {
+      if (err2) return console.log(err2.message);
+      console.log(`Email sent to ${destinationEmail}`);
+    });
+  });
+};
+
+userSchema.methods.resetPassword = function () {
+  const token = new Token({
+    _userId: this.id,
+    token: crypto.randomBytes(16).toString('hex'),
+  });
+  const destinationEmail = this.email;
+  token.save((err1) => {
+    if (err1) return console.log(err1.message);
+    const mailOptions = {
+      from: 'no-reply-biccycle-network.com',
+      to: destinationEmail,
+      subject: 'Verification code',
+      text: `Hola!, para recuperar tu contraseña, 
+      haz click en el siguiente link: http://localhost:3000/reset-password?token=${token.token}/ `,
     };
 
     mailer.sendMail(mailOptions, (err2) => {

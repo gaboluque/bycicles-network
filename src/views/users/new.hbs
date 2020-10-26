@@ -1,0 +1,24 @@
+<block class="content">
+  <h1 class="mt-10">New user</h1>
+  <a href="/users">Back</a>
+  <form action="/users/create" class="row justify-content-center" method="POST">
+    <div class="form-group col-md-4">
+      <label for="name">Name</label>
+      <input class="form-control" type="text" id="name" value="{{user.name}}" name="name">
+      <small class="text-danger">{{errors.name}}</small>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="email">Email</label>
+      <input class="form-control" type="email" id="email" value="{{user.email}}" name="email">
+      <small class="text-danger">{{errors.email}}</small>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="password">Password</label>
+      <input class="form-control" type="password" id="password" value="{{user.password}}" name="password">
+      <small class="text-danger">{{errors.password}}</small>
+    </div>
+    <div class="col-md-3 m-auto">
+      <input class="btn btn-primary btn-block" type="submit" value="Save">
+    </div>
+  </form>
+</block>

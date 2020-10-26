@@ -5,8 +5,10 @@ const cookieParser = require('cookie-parser');
 const indexRouter = require('./routes/index');
 const bicyclesRouter = require('./routes/bicyclesRouter');
 const bicyclesAPIRouter = require('./routes/api/bicyclesAPIRouter');
+const usersRouter = require('./routes/usersRouter');
 const usersAPIRouter = require('./routes/api/usersAPIRouter');
 const bookingsAPIRouter = require('./routes/api/bookingsAPIRouter');
+const tokensRouter = require('./routes/tokensRouter');
 
 const app = express();
 
@@ -22,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/bicycles', bicyclesRouter);
+app.use('/users', usersRouter);
+app.use('/token', tokensRouter);
 
 app.use('/api/bicycles', bicyclesAPIRouter);
 app.use('/api/users', usersAPIRouter);

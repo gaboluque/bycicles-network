@@ -1,7 +1,9 @@
 const Bicycle = require('../models/Bicycle');
 
 exports.listBicycles = (req, res) => {
-  res.render('bicycles/index', { bicycles: Bicycle.allBicycles });
+  Bicycle.allBicycles((bicycles) => {
+    res.render('bicycles/index', { bicycles });
+  });
 };
 
 exports.newBicycle = (req, res) => {

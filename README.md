@@ -2,6 +2,21 @@
 
 Red de Bicicletas
 
+### Semana 3 ###
+
+    * Registro de usuarios.
+    * Autorización de usuarios con Passport.
+    * Implementar capa de seguridad al API con JWT.
+    * Envío de emails.
+
+En el proyecto, hasta éste punto, podrá verse:
+
+    1. Modelo Token con referencia al modelo de Usuario
+    2. Envío de emails al registrarse y recuperar contraseña
+    3. Vistas de login y recuperar contraseña
+    4. Validación de credenciales
+    5. Autenticación mediante API
+
 ### Semana 2 ###
 
     * Configurar una base MongoDB.

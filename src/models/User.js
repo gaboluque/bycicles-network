@@ -75,6 +75,11 @@ userSchema.statics.add = function (user, cb) {
   this.create(user, cb);
 };
 
+userSchema.methods.toJSONObject = function () {
+  const { email, name, userContext } = this;
+  return { email, name, userContext };
+};
+
 userSchema.methods.sendWelcomeEmail = function () {
   const token = new Token({
     _userId: this.id,

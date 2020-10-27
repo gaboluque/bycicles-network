@@ -8,6 +8,7 @@ const bicyclesRouter = require('./routes/bicyclesRouter');
 const bicyclesAPIRouter = require('./routes/api/bicyclesAPIRouter');
 const usersRouter = require('./routes/usersRouter');
 const usersAPIRouter = require('./routes/api/usersAPIRouter');
+const authAPIRouter = require('./routes/api/authAPIRouter');
 const bookingsAPIRouter = require('./routes/api/bookingsAPIRouter');
 const tokensRouter = require('./routes/tokensRouter');
 const passport = require('./config/passport');
@@ -16,6 +17,8 @@ const sessionsRouter = require('./routes/sessionsRouter');
 const store = new session.MemoryStore();
 
 const app = express();
+
+app.set('secretKey', 'jwt_pwd_11223344');
 
 app.use(
   session({
@@ -48,6 +51,7 @@ app.use('/token', tokensRouter);
 app.use('/api/bicycles', bicyclesAPIRouter);
 app.use('/api/users', usersAPIRouter);
 app.use('/api/bookings', bookingsAPIRouter);
+app.use('/api/auth', authAPIRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

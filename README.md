@@ -2,6 +2,8 @@
 
 Red de Bicicletas
 
+Este proyecto refleja lo visto en el curso Desarrollo del lado servidor: NodeJS, Express y MongoDB de Coursera
+
 ### Semana 3 ###
 
     * Registro de usuarios.
